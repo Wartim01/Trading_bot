@@ -1,123 +1,131 @@
-import ccxt
 import pandas as pd
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-from ta.trend import SMAIndicator, MACD, IchimokuIndicator
-from ta.momentum import RSIIndicator, StochasticOscillator
-from ta.volatility import BollingerBands
-from ta.volume import OnBalanceVolumeIndicator
 import joblib
-import schedule
+from sklearn.ensemble import RandomForestRegressor
+from binance.client import Client
+from binance.exceptions import BinanceAPIException
+import config
 import time
-import logging
 
-# Configuration
-API_KEY = 'Cw6pBOG5Ct1GElMgwfD28PsVLKI9BW73STuVzEfJvIjSGIIPlNEB4TmDyBIWB4kT'
-API_SECRET = 'i3H2TpMxndXmfDNIQf5oNA17fiy0x8QQhumIxwab1L6lMpGSt8QI7JaSZaFwkIog'
-SYMBOL = 'BTC/USDT'
-EXCHANGE = ccxt.binance({
-    'apiKey': API_KEY,
-    'secret': API_SECRET,
-})
-RISK_MANAGEMENT = 0.02
-INITIAL_BALANCE = 20
-logging.basicConfig(filename='trading_bot.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-# Fetch and prepare data
-def fetch_data(symbol, timeframe='1h', limit=500):
-    bars = EXCHANGE.fetch_ohlcv(symbol, timeframe, limit=limit)
-    df = pd.DataFrame(bars, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
-    df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
-    return df
+client = Client(config.BINANCE_API_KEY, config.BINANCE_API_SECRET)
 
 def add_indicators(df):
-    df['sma'] = SMAIndicator(df['close'], window=20).sma_indicator()
-    df['macd'] = MACD(df['close']).macd()
-    df['rsi'] = RSIIndicator(df['close']).rsi()
-    df['stochastic'] = StochasticOscillator(df['close']).stoch()
-    bb = BollingerBands(df['close'])
-    df['bb_high'] = bb.bollinger_hband()
-    df['bb_low'] = bb.bollinger_lband()
-    df['obv'] = OnBalanceVolumeIndicator(df['close'], df['volume']).on_balance_volume()
-    ichimoku = IchimokuIndicator(df['high'], df['low'])
-    df['ichimoku_a'] = ichimoku.ichimoku_a()
-    df['ichimoku_b'] = ichimoku.ichimoku_b()
-    df.dropna(inplace=True)
+    df['sma'] = df['close'].rolling(window=15).mean()
+    df['macd'] = df['close'].ewm(span=12, adjust=False).mean() - df['close'].ewm(span=26, adjust=False).mean()
+    df['rsi'] = 100 - (100 / (1 + df['close'].diff().apply(lambda x: x if x > 0 else 0).rolling(window=14).mean() / df['close'].diff().apply(lambda x: abs(x)).rolling(window=14).mean()))
+    df['stochastic'] = (df['close'] - df['low'].rolling(window=14).min()) / (df['high'].rolling(window=14).max() - df['low'].rolling(window=14).min()) * 100
+    df['bb_high'] = df['close'].rolling(window=20).mean() + (df['close'].rolling(window=20).std() * 2)
+    df['bb_low'] = df['close'].rolling(window=20).mean() - (df['close'].rolling(window=20).std() * 2)
+    df['obv'] = (np.sign(df['close'].diff()) * df['volume']).fillna(0).cumsum()
+    df['ichimoku_a'] = ((df['high'].rolling(window=9).max() + df['low'].rolling(window=9).min()) / 2).shift(26)
+    df['ichimoku_b'] = ((df['high'].rolling(window=52).max() + df['low'].rolling(window=52).min()) / 2).shift(26)
     return df
 
-# Train model
+def fetch_data(symbol, interval, start_str):
+    try:
+        klines = client.get_historical_klines(symbol, interval, start_str)
+        data = pd.DataFrame(klines, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'])
+        data['timestamp'] = pd.to_datetime(data['timestamp'], unit='ms')
+        data.set_index('timestamp', inplace=True)
+        data = data.astype(float)
+        return data
+    except BinanceAPIException as e:
+        print(f"Error fetching data from Binance: {e}")
+        return None
+
 def train_model(df):
+    df = df.dropna()
     X = df[['sma', 'macd', 'rsi', 'stochastic', 'bb_high', 'bb_low', 'obv', 'ichimoku_a', 'ichimoku_b']]
-    y = np.where(df['close'].shift(-1) > df['close'], 1, 0)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    model = RandomForestClassifier()
-    model.fit(X_train, y_train)
+    y = df['close']
+    model = RandomForestRegressor(n_estimators=100)
+    model.fit(X, y)
     joblib.dump(model, 'trading_model.pkl')
-    y_pred = model.predict(X_test)
-    accuracy = accuracy_score(y_test, y_pred)
-    logging.info(f"Model Accuracy: {accuracy}")
 
-# Predict and trade
-def predict_and_trade(df):
-    model = joblib.load('trading_model.pkl')
-    X = df[['sma', 'macd', 'rsi', 'stochastic', 'bb_high', 'bb_low', 'obv', 'ichimoku_a', 'ichimoku_b']].iloc[-1:].values
-    prediction = model.predict(X)
-    if prediction == 1:
-        logging.info("Bullish signal detected. Preparing to buy.")
-        potential_profit = df['close'].pct_change().iloc[-1]
-        if potential_profit > 0.01:  # Example threshold for potential profit
-            amount_to_invest = INITIAL_BALANCE * RISK_MANAGEMENT
-            buy_price = df['close'].iloc[-1]
-            logging.info(f"Buying at {buy_price}")
-            # Simulate buy order
-            # order = EXCHANGE.create_market_buy_order(SYMBOL, amount_to_invest)
-            # Simulate sell condition
-            sell_price = buy_price * (1 + potential_profit)  # Example sell logic
-            logging.info(f"Selling at {sell_price}")
-            # Simulate sell order
-            # order = EXCHANGE.create_market_sell_order(SYMBOL, amount_to_invest)
-    else:
-        logging.info("No bullish signal detected.")
-
-# Backtesting function
 def backtest(df, model):
-    initial_balance = INITIAL_BALANCE
-    balance = initial_balance
-    positions = []
-
-    for i in range(1, len(df)):
-        X = df[['sma', 'macd', 'rsi', 'stochastic', 'bb_high', 'bb_low', 'obv', 'ichimoku_a', 'ichimoku_b']].iloc[i-1:i].values
-        prediction = model.predict(X)
-
-        if prediction == 1 and not positions:
-            buy_price = df['close'].iloc[i]
-            positions.append(buy_price)
-            logging.info(f"Backtest: Buying at {buy_price}")
-
-        elif positions:
-            current_price = df['close'].iloc[i]
-            sell_price = positions[-1] * (1 + df['close'].pct_change().iloc[i])
-            if current_price >= sell_price:
-                balance += (current_price - positions[-1]) * (balance / positions[-1])
-                positions = []
-                logging.info(f"Backtest: Selling at {current_price}, Balance: {balance}")
-
-    final_balance = balance
-    profit = final_balance - initial_balance
-    logging.info(f"Backtest Completed: Initial Balance: {initial_balance}, Final Balance: {final_balance}, Profit: {profit}")
+    df = df.dropna()
+    X = df[['sma', 'macd', 'rsi', 'stochastic', 'bb_high', 'bb_low', 'obv', 'ichimoku_a', 'ichimoku_b']]
+    df['predicted_close'] = model.predict(X)
+    df['signal'] = np.where(df['predicted_close'] > df['close'], 1, -1)
+    df['strategy_returns'] = df['signal'].shift(1) * df['close'].pct_change()
+    profit = df['strategy_returns'].cumsum()[-1]
     return profit
 
-# Schedule tasks
-def run_bot():
-    df = fetch_data(SYMBOL)
-    df = add_indicators(df)
-    train_model(df)
-    predict_and_trade(df)
+def place_order_with_risk_management(symbol, quantity, price, order_type='buy', stop_loss_pct=0.02, take_profit_pct=0.05):
+    try:
+        if order_type == 'buy':
+            order = client.order_limit_buy(
+                symbol=symbol,
+                quantity=quantity,
+                price=str(price)
+            )
+            stop_loss_price = price * (1 - stop_loss_pct)
+            take_profit_price = price * (1 + take_profit_pct)
+        elif order_type == 'sell':
+            order = client.order_limit_sell(
+                symbol=symbol,
+                quantity=quantity,
+                price=str(price)
+            )
+            stop_loss_price = price * (1 + stop_loss_pct)
+            take_profit_price = price * (1 - take_profit_pct)
 
-schedule.every().hour.do(run_bot)
+        print(f"{order_type.capitalize()} order placed. Stop-loss at {stop_loss_price}, Take-profit at {take_profit_price}")
+        return order
+    except BinanceAPIException as e:
+        print(f"Error placing {order_type} order: {e}")
+        return None
 
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+def bollinger_bands_strategy(df, window=20, no_of_std=2):
+    df['rolling_mean'] = df['close'].rolling(window).mean()
+    df['rolling_std'] = df['close'].rolling(window).std()
+    df['upper_band'] = df['rolling_mean'] + (df['rolling_std'] * no_of_std)
+    df['lower_band'] = df['rolling_mean'] - (df['rolling_std'] * no_of_std)
+    
+    df['position'] = None
+    df['position'] = np.where(df['close'] > df['upper_band'], -1, df['position'])
+    df['position'] = np.where(df['close'] < df['lower_band'], 1, df['position'])
+    
+    df['position'].fillna(method='ffill', inplace=True)
+    
+    df['strategy_returns'] = df['position'].shift(1) * df['close'].pct_change()
+    return df
+
+def update_model_with_new_data(symbol, interval, start_str):
+    df = fetch_data(symbol, interval, start_str)
+    if df is not None:
+        df_with_indicators = add_indicators(df)
+        train_model(df_with_indicators)
+        print("Model updated with new data.")
+    else:
+        print("Failed to fetch new data for updating model.")
+
+def continuous_training(symbol, interval, start_str, update_interval):
+    while True:
+        update_model_with_new_data(symbol, interval, start_str)
+        time.sleep(update_interval)
+
+if __name__ == "__main__":
+    symbol = 'BTCUSDT'
+    interval = Client.KLINE_INTERVAL_1HOUR
+    start_str = '1 Jan, 2021'
+    update_interval = 86400  # Mise à jour quotidienne (en secondes)
+    
+    # Initial model training
+    df = fetch_data(symbol, interval, start_str)
+    if df is not None:
+        df_with_indicators = add_indicators(df)
+        train_model(df_with_indicators)
+        model = joblib.load('trading_model.pkl')
+        
+        # Apply strategies and manage risk
+        df_with_bollinger = bollinger_bands_strategy(df_with_indicators)
+        for index, row in df_with_bollinger.iterrows():
+            if row['position'] == 1:
+                place_order_with_risk_management(symbol, quantity=0.001, price=row['close'], order_type='buy')
+            elif row['position'] == -1:
+                place_order_with_risk_management(symbol, quantity=0.001, price=row['close'], order_type='sell')
+
+        # Continuous training loop
+        continuous_training(symbol, interval, start_str, update_interval)
+    else:
+        print("Failed to fetch initial data.")
