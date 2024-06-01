@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
+# main.py
 import sys
 import os
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
 import time
 import importlib
 import logging
@@ -11,6 +9,8 @@ import pandas as pd
 from data.fetch_data import fetch_historical_data
 from config.settings import API_KEY, API_SECRET, SYMBOL, TIMEFRAME, INITIAL_CAPITAL, STRATEGY
 from models.model import train_model, load_model
+from strategies import Strategy
+from utils import get_market_data, execute_trade  # Utiliser l'import de utils.py
 
 logging.basicConfig(filename='trading_bot.log', level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s')
 
@@ -18,19 +18,6 @@ exchange = ccxt.binance({
     'apiKey': API_KEY,
     'secret': API_SECRET,
 })
-
-def execute_trade(signal, symbol, amount):
-    order = None
-    try:
-        if signal == 1:
-            order = exchange.create_market_buy_order(symbol, amount)
-            logging.info(f"Bought {amount} {symbol}")
-        elif signal == -1:
-            order = exchange.create_market_sell_order(symbol, amount)
-            logging.info(f"Sold {amount} {symbol}")
-    except Exception as e:
-        logging.error(f"Error executing trade: {e}")
-    return order
 
 def run_bot(symbol, amount, strategy_module, timeframe='1h', mode='live'):
     strategy = importlib.import_module(f'strategies.{strategy_module}')
