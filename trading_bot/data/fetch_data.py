@@ -22,3 +22,9 @@ def fetch_historical_data(symbol, timeframe, start_date, end_date):
     data = pd.DataFrame(all_ohlcv, columns=['timestamp', 'open', 'high', 'low', 'close', 'volume'])
     data['timestamp'] = pd.to_datetime(data['timestamp'], unit='ms')
     return data
+
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from config.settings import API_KEY, API_SECRET, EXCHANGE
