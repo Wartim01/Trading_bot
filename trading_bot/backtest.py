@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 import pandas as pd
 import numpy as np
-from data.fetch_data import fetch_historical_data
+from COCOPILOT.trading_bot.data.fetch_new_data import fetch_historical_data
 from strategies.macd_strategy import MACDStrategy
 from strategies.bollinger_strategy import BollingerStrategy
 import logging
