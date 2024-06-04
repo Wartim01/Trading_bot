@@ -1,30 +1,22 @@
-import pandas as pd
 import ta
-import logging
+import pandas as pd
 
-class MACDStrategy:
-    def __init__(self):
-        self.data = pd.DataFrame()
+def check(data):
+    if not isinstance(data, pd.DataFrame):
+        data = pd.DataFrame([data])
 
-    def add_indicators(self, data):
-        try:
-            data['macd'] = ta.trend.MACD(data['close']).macd()
-            data['signal'] = ta.trend.MACD(data['close']).macd_signal()
-        except Exception as e:
-            logging.error(f"Error adding indicators: {e}")
-        return data
+    if len(data) < 26:  # Vérifiez si nous avons suffisamment de données
+        return None
 
-    def decide(self, market_data):
-        self.data = pd.concat([self.data, market_data], ignore_index=True)
-        if len(self.data) < 26:  # MACD requires at least 26 data points
-            return "HOLD"
+    macd = ta.trend.MACD(close=data['Close'], window_slow=26, window_fast=12, window_sign=9)
+    data['macd'] = macd.macd()
+    data['macd_signal'] = macd.macd_signal()
 
-        self.data = self.add_indicators(self.data)
-        latest_data = self.data.iloc[-1]
+    print(f"MACD for {data['symbol'].iloc[-1]}: MACD={data['macd'].iloc[-1]}, Signal={data['macd_signal'].iloc[-1]}")
 
-        if latest_data['macd'] > latest_data['signal']:
-            return "BUY"
-        elif latest_data['macd'] < latest_data['signal']:
-            return "SELL"
-        else:
-            return "HOLD"
+    if data['macd'].iloc[-1] > data['macd_signal'].iloc[-1] and data['macd'].iloc[-2] <= data['macd_signal'].iloc[-2]:
+        return True
+    elif data['macd'].iloc[-1] < data['macd_signal'].iloc[-1] and data['macd'].iloc[-2] >= data['macd_signal'].iloc[-2]:
+        return False
+    else:
+        return None

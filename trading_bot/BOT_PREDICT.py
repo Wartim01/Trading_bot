@@ -5,15 +5,19 @@ from sklearn.preprocessing import StandardScaler
 from binance.client import Client
 import numpy as np
 import time
+from trading_bot.strategies.bollinger_strategy import check as bollinger_check
+from trading_bot.strategies.ma_cross_strategy import check as ma_cross_check
+from trading_bot.strategies.macd_strategy import check as macd_check
+from trading_bot.strategies.rsi_strategy import check as rsi_check
 
 # Charger les modèles
 rf_model = joblib.load('models/rf_model.pkl')
 nn_model = load_model('models/nn_model.h5')
 
 # Clés API Binance
-api_key = 'YOUR_BINANCE_API_KEY'
-api_secret = 'YOUR_BINANCE_API_SECRET'
-client = Client(api_key, api_secret)
+API_KEY = 'Cw6pBOG5Ct1GElMgwfD28PsVLKI9BW73STuVzEfJvIjSGIIPlNEB4TmDyBIWB4kT'
+API_SECRET = 'i3H2TpMxndXmfDNIQf5oNA17fiy0x8QQhumIxwab1L6lMpGSt8QI7JaSZaFwkIog'
+client = Client(API_KEY, API_SECRET)
 
 # Liste des symboles des crypto-monnaies
 symbols = ['BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'ADAUSDT', 'XRPUSDT', 'SOLUSDT', 'DOGEUSDT', 'DOTUSDT', 'AVAXUSDT', 'SHIBUSDT']
@@ -63,21 +67,55 @@ def calculate_trade_amount(capital, current_price):
     trade_amount = (capital * 0.02) / current_price
     return trade_amount
 
+# Fonction pour vérifier les stratégies
+def apply_strategies(data):
+    bollinger_signal = bollinger_check(data)
+    ma_cross_signal = ma_cross_check(data)
+    macd_signal = macd_check(data)
+    rsi_signal = rsi_check(data)
+    return [bollinger_signal, ma_cross_signal, macd_signal, rsi_signal]
+
 # Fonction pour prendre des décisions de trading
 def trade_decision(data, capital):
     for index, row in data.iterrows():
         trade_amount = calculate_trade_amount(capital, row['Close'])
-        if row['NN_Predictions'] > row['Close']:
+        strategies_signals = apply_strategies(row)
+        buy_signals = strategies_signals.count(True)
+        sell_signals = strategies_signals.count(False)
+        
+        if row['NN_Predictions'] > row['Close'] and buy_signals >= 2:
             print(f"Buy signal for {row['symbol']} at {row['Close']}")
-            # Execute buy order (exemple)
-            # client.order_market_buy(symbol=row['symbol'], quantity=trade_amount)
-            # Set limit sell order
+            # Exécuter l'ordre d'achat
+            try:
+                order = client.order_market_buy(
+                    symbol=row['symbol'],
+                    quantity=trade_amount
+                )
+                print(f"Buy order placed for {row['symbol']}: {order}")
+            except Exception as e:
+                print(f"An error occurred: {e}")
+            # Placer un ordre de vente limite
             sell_price = row['NN_Predictions']
-            # client.order_limit_sell(symbol=row['symbol'], quantity=trade_amount, price=sell_price)
-        else:
+            try:
+                order = client.order_limit_sell(
+                    symbol=row['symbol'],
+                    quantity=trade_amount,
+                    price=str(sell_price)
+                )
+                print(f"Sell limit order placed for {row['symbol']} at {sell_price}: {order}")
+            except Exception as e:
+                print(f"An error occurred: {e}")
+        elif row['NN_Predictions'] < row['Close'] and sell_signals >= 2:
             print(f"Sell signal for {row['symbol']} at {row['Close']}")
-            # Execute sell order (exemple)
-            # client.order_market_sell(symbol=row['symbol'], quantity=trade_amount)
+            # Exécuter l'ordre de vente
+            try:
+                order = client.order_market_sell(
+                    symbol=row['symbol'],
+                    quantity=trade_amount
+                )
+                print(f"Sell order placed for {row['symbol']}: {order}")
+            except Exception as e:
+                print(f"An error occurred: {e}")
 
 # Exécution du bot de trading
 def run_bot():

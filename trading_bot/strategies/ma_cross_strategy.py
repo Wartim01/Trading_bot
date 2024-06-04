@@ -1,26 +1,42 @@
+Python
 import pandas as pd
-import ta
 
-class MACrossStrategy:
-    def __init__(self):
-        self.data = pd.DataFrame()
+def ma_cross_check(data, short_window=10, long_window=50):
+    """
+    Vérifie la stratégie de croisement de moyennes mobiles (MA Cross).
 
-    def add_indicators(self, data):
-        data['ma50'] = ta.trend.SMAIndicator(data['close'], window=50).sma_indicator()
-        data['ma200'] = ta.trend.SMAIndicator(data['close'], window=200).sma_indicator()
-        return data
+    Args:
+        data (pd.DataFrame): Données de marché avec au moins 'long_window' périodes.
+        short_window (int, optional): Période de la moyenne mobile courte (défaut: 10).
+        long_window (int, optional): Période de la moyenne mobile longue (défaut: 50).
 
-    def decide(self, market_data):
-        self.data = self.data.append(market_data, ignore_index=True)
-        if len(self.data) < 200:  # MA Cross requires at least 200 data points
-            return "HOLD"
+    Returns:
+        bool or None: True (signal d'achat), False (signal de vente), None (pas de signal).
+    """
+    if not isinstance(data, pd.DataFrame):
+        data = pd.DataFrame([data])
 
-        self.data = self.add_indicators(self.data)
-        latest_data = self.data.iloc[-1]
+    if len(data) < long_window:
+        return None
 
-        if latest_data['ma50'] > latest_data['ma200']:
-            return "BUY"
-        elif latest_data['ma50'] < latest_data['ma200']:
-            return "SELL"
-        else:
-            return "HOLD"
+    # Calcul des moyennes mobiles
+    data['ma_short'] = data['Close'].rolling(window=short_window).mean()
+    data['ma_long'] = data['Close'].rolling(window=long_window).mean()
+
+    # Vérification du croisement
+    buy_signal = (
+        data['ma_short'].iloc[-1] > data['ma_long'].iloc[-1] and 
+        data['ma_short'].iloc[-2] <= data['ma_long'].iloc[-2]
+    )
+    sell_signal = (
+        data['ma_short'].iloc[-1] < data['ma_long'].iloc[-1] and 
+        data['ma_short'].iloc[-2] >= data['ma_long'].iloc[-2]
+    )
+    if buy_signal:
+        print(f"MA Cross Buy signal for {data['symbol'].iloc[-1]}")
+        return True
+    elif sell_signal:
+        print(f"MA Cross Sell signal for {data['symbol'].iloc[-1]}")
+        return False
+    else:
+        return None

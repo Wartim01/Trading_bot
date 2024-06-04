@@ -1,0 +1,33 @@
+2024-06-04 08:42:32,953:WARNING:Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2024-06-04 08:42:33,280:INFO:Fetching data for BTCUSDT
+2024-06-04 08:42:34,776:INFO:Fetching data for ETHUSDT
+2024-06-04 08:42:37,098:INFO:Fetching data for BNBUSDT
+2024-06-04 08:42:38,990:INFO:Fetching data for ADAUSDT
+2024-06-04 08:42:40,881:INFO:Fetching data for XRPUSDT
+2024-06-04 08:42:43,202:INFO:Fetching data for SOLUSDT
+2024-06-04 08:42:45,529:INFO:Fetching data for DOGEUSDT
+2024-06-04 08:42:47,419:INFO:Fetching data for DOTUSDT
+2024-06-04 08:42:49,749:INFO:Fetching data for AVAXUSDT
+2024-06-04 08:42:51,853:INFO:Fetching data for SHIBUSDT
+2024-06-04 08:42:53,471:INFO:Predictions made using models
+2024-06-04 08:42:53,471:INFO:Calculated trade amount: 5.79714177721816e-06
+2024-06-04 08:42:53,471:INFO:Strategy signals: Bollinger=None, MA Cross=None, MACD=None, RSI=None
+2024-06-04 08:42:53,471:INFO:Calculated trade amount: 0.0001061836020663329
+2024-06-04 08:42:53,471:INFO:Strategy signals: Bollinger=None, MA Cross=None, MACD=None, RSI=None
+2024-06-04 08:42:53,471:INFO:Calculated trade amount: 0.000634517766497462
+2024-06-04 08:42:53,472:INFO:Strategy signals: Bollinger=None, MA Cross=None, MACD=None, RSI=None
+2024-06-04 08:42:53,472:INFO:Calculated trade amount: 0.8750820389411508
+2024-06-04 08:42:53,472:INFO:Strategy signals: Bollinger=None, MA Cross=None, MACD=None, RSI=None
+2024-06-04 08:42:53,472:INFO:Calculated trade amount: 0.7698229407236337
+2024-06-04 08:42:53,472:INFO:Strategy signals: Bollinger=None, MA Cross=None, MACD=None, RSI=None
+2024-06-04 08:42:53,472:INFO:Calculated trade amount: 0.002414584087890861
+2024-06-04 08:42:53,472:INFO:Strategy signals: Bollinger=None, MA Cross=None, MACD=None, RSI=None
+2024-06-04 08:42:53,472:INFO:Calculated trade amount: 2.5294043252813965
+2024-06-04 08:42:53,472:INFO:Strategy signals: Bollinger=None, MA Cross=None, MACD=None, RSI=None
+2024-06-04 08:42:53,473:INFO:Calculated trade amount: 0.05701254275940707
+2024-06-04 08:42:53,473:INFO:Strategy signals: Bollinger=None, MA Cross=None, MACD=None, RSI=None
+2024-06-04 08:42:53,473:INFO:Calculated trade amount: 0.011467889908256881
+2024-06-04 08:42:53,473:INFO:Strategy signals: Bollinger=None, MA Cross=None, MACD=None, RSI=None
+2024-06-04 08:42:53,473:INFO:Calculated trade amount: 16750.418760469012
+2024-06-04 08:42:53,473:INFO:Strategy signals: Bollinger=None, MA Cross=None, MACD=None, RSI=None
+2024-06-04 08:42:53,475:INFO:Predictions saved to data/predictions.csv
