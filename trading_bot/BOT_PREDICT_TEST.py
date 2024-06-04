@@ -8,25 +8,24 @@ from tensorflow.keras.models import load_model
 from sklearn.preprocessing import StandardScaler
 from binance.client import Client
 from binance.enums import *
+from binance.exceptions import BinanceAPIException
 import numpy as np
 import time
 import logging
+import re
 
 # Importation des stratégies
-from trading_bot.strategies import (
-    bollinger_check, ma_cross_check, macd_check, rsi_check,
-    ema_cross_check, stochastic_oscillator_check, adx_check, ichimoku_check,
-    volume_check, candlestick_check, obv_check, aroon_check,
-    parabolic_sar_check, williams_r_check, tema_check, atr_check,
-    keltner_channel_check, donchian_channel_check, rvi_check, momentum_check
+from strategies import (
+    bollinger_strategy, ma_cross_strategy, macd_strategy, rsi_strategy,
+    ema_cross_strategy, stochastic_oscillator_strategy, adx_strategy, ichimoku_strategy,
+    volume_strategy, candlestick_strategy, obv_strategy, aroon_strategy,
+    parabolic_sar_strategy, williams_r_strategy, tema_strategy, atr_strategy,
+    keltner_channel_strategy, donchian_channel_strategy, rvi_strategy, momentum_strategy
 )
+
 # Configurer les logs
 logging.basicConfig(filename='trading_bot.log', level=logging.INFO, 
                     format='%(asctime)s:%(levelname)s:%(message)s')
-
-# Charger les modèles
-rf_model = joblib.load('models/rf_model.pkl')
-nn_model = load_model('models/nn_model.h5')
 
 # Clés API Binance pour le Testnet
 api_key = 'fvo67wee5dq10q00pajP2y9Rqz5Pwkdc01h2RY8m9OirvQ0oOPJhrFUW2QyKYfEJ'
@@ -36,15 +35,28 @@ client = Client(api_key, api_secret, testnet=True)
 # Liste des symboles des crypto-monnaies
 symbols = ['BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'ADAUSDT', 'XRPUSDT', 'SOLUSDT', 'DOGEUSDT', 'DOTUSDT', 'AVAXUSDT', 'SHIBUSDT']
 
-# Fonction pour récupérer les nouvelles données
+# Fonction pour récupérer les nouvelles données (optimisée)
 def fetch_new_data(symbols):
     new_data = []
+    valid_symbols = []
+
     for symbol in symbols:
-        logging.info(f"Fetching data for {symbol}")
-        klines = client.get_historical_klines(symbol, Client.KLINE_INTERVAL_1DAY, "1 day ago UTC")
-        if not klines:
-            logging.warning(f"No data found for {symbol}")
-            continue
+        if re.match("^[A-Z0-9]{1,20}$", symbol):  # Vérification du format du symbole
+            valid_symbols.append(symbol)
+        else:
+            logging.warning(f"Invalid symbol: {symbol} - Reason: Does not match regex")
+
+    if not valid_symbols:
+        logging.error("No valid symbols found.")
+        return pd.DataFrame() 
+
+    try:
+        klines = client.get_klines(
+            symbol=valid_symbols, 
+            interval=Client.KLINE_INTERVAL_1DAY,
+            limit=1 
+        )
+
         for kline in klines:
             new_data.append({
                 'Open': float(kline[1]),
@@ -56,30 +68,18 @@ def fetch_new_data(symbols):
                 'Number_of_trades': int(kline[8]),
                 'Taker_buy_base_asset_volume': float(kline[9]),
                 'Taker_buy_quote_asset_volume': float(kline[10]),
-                'symbol': symbol
+                'symbol': kline[0].split("USDT")[0] + "USDT" 
             })
-        time.sleep(1)  # Pour éviter de surcharger l'API
+
+    except BinanceAPIException as e:  # Gestion de l'erreur BinanceAPIException
+        logging.error(f"Error fetching klines: {e}")
+        return pd.DataFrame()  # Renvoyer un DataFrame vide en cas d'erreur
+
     return pd.DataFrame(new_data)
-
-# Fonction pour normaliser les données
-def normalize_data(data):
-    scaler = StandardScaler()
-    return scaler.fit_transform(data)
-
-# Fonction pour faire des prédictions
-def make_predictions(data):
-    X_new = data[['Open', 'High', 'Low', 'Close', 'Volume', 'Quote_asset_volume', 'Number_of_trades', 'Taker_buy_base_asset_volume', 'Taker_buy_quote_asset_volume']]
-    X_new_scaled = normalize_data(X_new)
-    rf_predictions = rf_model.predict(X_new_scaled)
-    nn_predictions = nn_model.predict(X_new_scaled)
-    data['RF_Predictions'] = rf_predictions
-    data['NN_Predictions'] = nn_predictions
-    logging.info("Predictions made using models")
-    return data
 
 # Fonction pour gérer les risques et calculer la quantité de trade
 def calculate_trade_amount(capital, current_price):
-    trade_amount = (capital * 0.02) / current_price
+    trade_amount = (capital * 0.02) / current_price  # Risque de 2% par trade
     logging.info(f"Calculated trade amount: {trade_amount}")
     return trade_amount
 
@@ -87,13 +87,9 @@ def calculate_trade_amount(capital, current_price):
 def apply_strategies(data):
     signals = {}
     for strategy in [
-        bollinger_check, ma_cross_check, macd_check, rsi_check,
-        ema_cross_check, stochastic_oscillator_check, adx_check, ichimoku_check,
-        volume_check, candlestick_check, obv_check, aroon_check,
-        parabolic_sar_check, williams_r_check, tema_check, 
-        keltner_channel_check, donchian_channel_check, rvi_check, momentum_check
+        # ... (liste de vos stratégies)
     ]:
-        signal = strategy(data.copy())  # Passer une copie des données à chaque stratégie
+        signal = strategy(data.copy()) 
         signals[strategy.__name__] = signal
     return signals
 
@@ -102,16 +98,16 @@ def trade_decision(data, capital):
     for index, row in data.iterrows():
         trade_amount = calculate_trade_amount(capital, row['Close'])
         
-        # Créez un DataFrame pour passer à la fonction check
-        row_df = data.iloc[max(0, index-50):index+1]  # Prenez les 50 dernières lignes ou moins si moins de 50
+        # DataFrame pour les 50 dernières lignes (ou moins)
+        row_df = data.iloc[max(0, index-50):index+1]
         strategies_signals = apply_strategies(row_df)
-        
-        buy_signals = strategies_signals.count(True)
-        sell_signals = strategies_signals.count(False)
-        
-        if row['NN_Predictions'] > row['Close'] and buy_signals >= 2:
+
+        buy_signals = sum(strategies_signals.values()) 
+        sell_signals = len(strategies_signals) - buy_signals
+
+        if buy_signals >= 3:  # Achat si au moins 2 stratégies donnent un signal d'achat
+            # Exécuter l'ordre d'achat ici (code indenté)
             logging.info(f"Buy signal for {row['symbol']} at {row['Close']}")
-            # Exécuter l'ordre d'achat
             try:
                 order = client.order_market_buy(
                     symbol=row['symbol'],
@@ -120,20 +116,10 @@ def trade_decision(data, capital):
                 logging.info(f"Buy order placed for {row['symbol']}: {order}")
             except Exception as e:
                 logging.error(f"An error occurred while placing buy order: {e}")
-            # Placer un ordre de vente limite
-            sell_price = row['NN_Predictions']
-            try:
-                order = client.order_limit_sell(
-                    symbol=row['symbol'],
-                    quantity=trade_amount,
-                    price=str(sell_price)
-                )
-                logging.info(f"Sell limit order placed for {row['symbol']} at {sell_price}: {order}")
-            except Exception as e:
-                logging.error(f"An error occurred while placing sell limit order: {e}")
-        elif row['NN_Predictions'] < row['Close'] and sell_signals >= 2:
+                
+        elif sell_signals >= 3:  # Vente si au moins 2 stratégies donnent un signal de vente
+            # Exécuter l'ordre de vente ici (code indenté)
             logging.info(f"Sell signal for {row['symbol']} at {row['Close']}")
-            # Exécuter l'ordre de vente
             try:
                 order = client.order_market_sell(
                     symbol=row['symbol'],
@@ -142,18 +128,16 @@ def trade_decision(data, capital):
                 logging.info(f"Sell order placed for {row['symbol']}: {order}")
             except Exception as e:
                 logging.error(f"An error occurred while placing sell order: {e}")
-
+ 
 # Exécution du bot de trading
 def run_bot():
-    capital = 20  # Capital disponible en USD
+    capital = 20 
     new_data = fetch_new_data(symbols)
     if new_data.empty:
         logging.warning("No new data fetched.")
         return
-    predictions = make_predictions(new_data)
-    trade_decision(predictions, capital)
-    predictions.to_csv('data/predictions.csv', index=False)
-    logging.info("Predictions saved to data/predictions.csv")
+
+    trade_decision(new_data, capital) 
 
 if __name__ == "__main__":
     run_bot()

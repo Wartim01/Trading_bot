@@ -1,4 +1,3 @@
-Python
 import pandas as pd
 
 def ma_cross_check(data, short_window=10, long_window=50):
