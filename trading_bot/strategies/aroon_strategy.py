@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def aroon_check(data, window=25):
+def aroon_strategy(data, window=25):
     """
     Vérifie la stratégie Aroon Indicator.
 

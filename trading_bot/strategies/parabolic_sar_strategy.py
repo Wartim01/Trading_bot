@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def parabolic_sar_check(data, acceleration=0.02, maximum=0.2):
+def parabolic_sar_strategy(data, acceleration=0.02, maximum=0.2):
     """
     Vérifie la stratégie Parabolic SAR (Stop and Reverse).
 

@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def momentum_check(data, window=10):
+def momentum_strategy(data, window=10):
     """
     Vérifie la stratégie Momentum.
 

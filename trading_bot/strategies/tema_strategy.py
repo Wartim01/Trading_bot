@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def tema_check(data, window=20):
+def tema_strategy(data, window=20):
     """
     Vérifie la stratégie Triple Exponential Moving Average (TEMA).
 

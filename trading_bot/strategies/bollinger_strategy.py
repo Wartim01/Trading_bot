@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def bollinger_check(data, window=20, window_dev=2):
+def bollinger_strategy(data, window=20, window_dev=2):
     """
     Vérifie la stratégie des bandes de Bollinger.
 

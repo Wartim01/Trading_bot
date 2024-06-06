@@ -2,7 +2,7 @@
 import pandas as pd
 import ta
 
-def rsi_check(data, window=14, overbought=70, oversold=30):
+def rsi_strategy(data, window=14, overbought=70, oversold=30):
     """
     Vérifie la stratégie RSI (Relative Strength Index).
 

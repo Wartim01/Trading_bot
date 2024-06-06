@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def rvi_check(data, window=14):
+def rvi_strategy(data, window=14):
     """
     Vérifie la stratégie Relative Vigor Index (RVI).
 

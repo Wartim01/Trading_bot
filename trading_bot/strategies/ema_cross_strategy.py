@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def ema_cross_check(data, short_window=12, long_window=26):
+def ema_cross_strategy(data, short_window=12, long_window=26):
     """
     Vérifie la stratégie de croisement de moyennes mobiles exponentielles (EMA Crossover).
 

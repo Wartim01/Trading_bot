@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def williams_r_check(data, lbp=14):
+def williams_r_strategy(data, lbp=14):
     """
     Vérifie la stratégie Williams %R.
 

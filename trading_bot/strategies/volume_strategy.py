@@ -1,6 +1,6 @@
 import pandas as pd
 
-def volume_check(data, window=20):
+def volume_strategy(data, window=20):
     """
     Vérifie la stratégie basée sur le volume.
 

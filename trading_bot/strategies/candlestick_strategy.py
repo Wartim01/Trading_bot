@@ -1,31 +1,19 @@
-import pandas as pd
-import ta
+import talib
 
-def candlestick_check(data):
+def candlestick_strategy(data):
     """
-    Vérifie les signaux basés sur l'analyse des chandeliers japonais.
-
-    Args:
-        data (pd.DataFrame): Données de marché avec les colonnes 'Open', 'High', 'Low', 'Close'.
-
-    Returns:
-        bool or None: True (signal d'achat), False (signal de vente), None (pas de signal).
+    Candlestick pattern strategy implementation.
+    Checks for various candlestick patterns and generates buy/sell signals based on them.
     """
-    if not isinstance(data, pd.DataFrame):
-        data = pd.DataFrame([data])
+    data['hammer'] = talib.CDLHAMMER(data['open'], data['high'], data['low'], data['close'])
+    data['engulfing'] = talib.CDLENGULFING(data['open'], data['high'], data['low'], data['close'])
 
-    # Exemple de vérification d'un motif de chandelier haussier (marteau)
-    hammer = ta.trend.Hammer(data['Open'], data['High'], data['Low'], data['Close'])
-    data['hammer'] = hammer.hammer()
-    if data['hammer'].iloc[-1]:
-        print(f"Candlestick Buy signal (Hammer) for {data['symbol'].iloc[-1]}")
-        return True
+    buy_signal = (data['hammer'] != 0) | (data['engulfing'] == 100)
+    sell_signal = (data['engulfing'] == -100)
 
-    # Exemple de vérification d'un motif de chandelier baissier (étoile filante)
-    shooting_star = ta.trend.ShootingStar(data['Open'], data['High'], data['Low'], data['Close'])
-    data['shooting_star'] = shooting_star.shooting_star()
-    if data['shooting_star'].iloc[-1]:
-        print(f"Candlestick Sell signal (Shooting Star) for {data['symbol'].iloc[-1]}")
-        return False
-
-    return None  # Aucun motif de chandelier significatif détecté
+    if buy_signal.any():
+        return 1
+    elif sell_signal.any():
+        return -1
+    else:
+        return None

@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def atr_check(data, window=14, risk_factor=2):
+def atr_strategy(data, window=14, risk_factor=2):
     """
     Vérifie la stratégie basée sur l'Average True Range (ATR).
 

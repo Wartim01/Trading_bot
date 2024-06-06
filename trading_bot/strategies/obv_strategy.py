@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def obv_check(data, window=20):
+def obv_strategy(data, window=20):
     """
     Vérifie la stratégie On-Balance Volume (OBV).
 

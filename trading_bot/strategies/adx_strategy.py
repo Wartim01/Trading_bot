@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def adx_check(data, window=14):
+def adx_strategy(data, window=14):
     """
     Vérifie la stratégie de l'Average Directional Index (ADX).
 

@@ -15,14 +15,26 @@ import logging
 import re
 
 # Importation des stratégies
-from strategies import (
-    bollinger_strategy, ma_cross_strategy, macd_strategy, rsi_strategy,
-    ema_cross_strategy, stochastic_oscillator_strategy, adx_strategy, ichimoku_strategy,
-    volume_strategy, candlestick_strategy, obv_strategy, aroon_strategy,
-    parabolic_sar_strategy, williams_r_strategy, tema_strategy, atr_strategy,
-    keltner_channel_strategy, donchian_channel_strategy, rvi_strategy, momentum_strategy
-)
-
+from strategies.bollinger_strategy import bollinger_strategy
+from strategies.ma_cross_strategy import ma_cross_strategy
+from strategies.macd_strategy import macd_strategy
+from strategies.rsi_strategy import rsi_strategy
+from strategies.ema_cross_strategy import ema_cross_strategy
+from strategies.stochastic_oscillator_strategy import stochastic_oscillator_strategy
+from strategies.adx_strategy import adx_strategy
+from strategies.ichimoku_strategy import ichimoku_strategy
+from strategies.volume_strategy import volume_strategy
+from strategies.candlestick_strategy import candlestick_strategy
+from strategies.obv_strategy import obv_strategy
+from strategies.aroon_strategy import aroon_strategy
+from strategies.parabolic_sar_strategy import parabolic_sar_strategy
+from strategies.williams_r_strategy import williams_r_strategy
+from strategies.tema_strategy import tema_strategy
+from strategies.atr_strategy import atr_strategy
+from strategies.keltner_channel_strategy import keltner_channel_strategy
+from strategies.donchian_channel_strategy import donchian_channel_strategy
+from strategies.rvi_strategy import rvi_strategy
+from strategies.momentum_strategy import momentum_strategy
 # Configurer les logs
 logging.basicConfig(filename='trading_bot.log', level=logging.INFO, 
                     format='%(asctime)s:%(levelname)s:%(message)s')
@@ -50,33 +62,35 @@ def fetch_new_data(symbols):
         logging.error("No valid symbols found.")
         return pd.DataFrame() 
 
-    try:
-        klines = client.get_klines(
-            symbol=valid_symbols, 
-            interval=Client.KLINE_INTERVAL_1DAY,
-            limit=1 
-        )
+    for symbol in valid_symbols:
+        logging.info(f"Fetching klines for symbol: {symbol}")
+        try:
+            klines = client.get_klines(symbol=symbol, interval='1h')
+        except BinanceAPIException as e:
+            logging.error(f"Binance API error fetching klines for {symbol}: {e.message}")
+            continue
+        except Exception as e:
+            logging.error(f"General error fetching klines for {symbol}: {e}")
+            continue
 
         for kline in klines:
             new_data.append({
-                'Open': float(kline[1]),
-                'High': float(kline[2]),
-                'Low': float(kline[3]),
-                'Close': float(kline[4]),
-                'Volume': float(kline[5]),
-                'Quote_asset_volume': float(kline[7]),
-                'Number_of_trades': int(kline[8]),
-                'Taker_buy_base_asset_volume': float(kline[9]),
-                'Taker_buy_quote_asset_volume': float(kline[10]),
-                'symbol': kline[0].split("USDT")[0] + "USDT" 
+                'symbol': symbol,
+                'timestamp': pd.to_datetime(kline[0], unit='ms'),
+                'open': float(kline[1]),
+                'high': float(kline[2]),
+                'low': float(kline[3]),
+                'close': float(kline[4]),
+                'volume': float(kline[5]),
+                'close_time': pd.to_datetime(kline[6], unit='ms'),
+                'quote_asset_volume': float(kline[7]),
+                'number_of_trades': int(kline[8]),
+                'taker_buy_base_asset_volume': float(kline[9]),
+                'taker_buy_quote_asset_volume': float(kline[10]),
+                'ignore': kline[11]
             })
 
-    except BinanceAPIException as e:  # Gestion de l'erreur BinanceAPIException
-        logging.error(f"Error fetching klines: {e}")
-        return pd.DataFrame()  # Renvoyer un DataFrame vide en cas d'erreur
-
     return pd.DataFrame(new_data)
-
 # Fonction pour gérer les risques et calculer la quantité de trade
 def calculate_trade_amount(capital, current_price):
     trade_amount = (capital * 0.02) / current_price  # Risque de 2% par trade
@@ -87,27 +101,35 @@ def calculate_trade_amount(capital, current_price):
 def apply_strategies(data):
     signals = {}
     for strategy in [
-        # ... (liste de vos stratégies)
+        bollinger_strategy, ma_cross_strategy, macd_strategy, rsi_strategy,
+    ema_cross_strategy, stochastic_oscillator_strategy, adx_strategy, ichimoku_strategy,
+    volume_strategy, candlestick_strategy, obv_strategy, aroon_strategy,
+    parabolic_sar_strategy, williams_r_strategy, tema_strategy, atr_strategy,
+    keltner_channel_strategy, donchian_channel_strategy, rvi_strategy, momentum_strategy
     ]:
-        signal = strategy(data.copy()) 
-        signals[strategy.__name__] = signal
+        result = strategy(data.copy())
+        if isinstance(result, dict):
+            signals.update(result)  # Fusionner les dictionnaires de signaux
+        else:
+            signals[strategy.__name__] = result  # Ajouter le signal unique
     return signals
 
-# Fonction pour prendre des décisions de trading
 def trade_decision(data, capital):
     for index, row in data.iterrows():
-        trade_amount = calculate_trade_amount(capital, row['Close'])
+        trade_amount = calculate_trade_amount(capital, row['close'])
         
         # DataFrame pour les 50 dernières lignes (ou moins)
         row_df = data.iloc[max(0, index-50):index+1]
         strategies_signals = apply_strategies(row_df)
+        
+        # Liste de tous les signaux 
+        all_signals = [signal for strategy_signals in strategies_signals.values() for signal in strategy_signals.values()] 
 
-        buy_signals = sum(strategies_signals.values()) 
-        sell_signals = len(strategies_signals) - buy_signals
+        buy_signals = all_signals.count(True)
+        sell_signals = all_signals.count(False)
 
-        if buy_signals >= 3:  # Achat si au moins 2 stratégies donnent un signal d'achat
-            # Exécuter l'ordre d'achat ici (code indenté)
-            logging.info(f"Buy signal for {row['symbol']} at {row['Close']}")
+        if buy_signals >= 3:  
+            logging.info(f"Buy signal for {row['symbol']} at {row['close']}")
             try:
                 order = client.order_market_buy(
                     symbol=row['symbol'],
@@ -117,9 +139,8 @@ def trade_decision(data, capital):
             except Exception as e:
                 logging.error(f"An error occurred while placing buy order: {e}")
                 
-        elif sell_signals >= 3:  # Vente si au moins 2 stratégies donnent un signal de vente
-            # Exécuter l'ordre de vente ici (code indenté)
-            logging.info(f"Sell signal for {row['symbol']} at {row['Close']}")
+        elif sell_signals >= 3:  
+            logging.info(f"Sell signal for {row['symbol']} at {row['close']}")
             try:
                 order = client.order_market_sell(
                     symbol=row['symbol'],
@@ -128,8 +149,8 @@ def trade_decision(data, capital):
                 logging.info(f"Sell order placed for {row['symbol']}: {order}")
             except Exception as e:
                 logging.error(f"An error occurred while placing sell order: {e}")
- 
-# Exécution du bot de trading
+
+
 def run_bot():
     capital = 20 
     new_data = fetch_new_data(symbols)

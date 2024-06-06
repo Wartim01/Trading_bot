@@ -1,6 +1,6 @@
 import pandas as pd
 
-def donchian_channel_check(data, window=20):
+def donchian_channel_strategy(data, window=20):
     """
     Vérifie la stratégie Donchian Channel.
 

@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def keltner_channel_check(data, window=20, multiplier=2):
+def keltner_channel_strategy(data, window=20, multiplier=2):
     """
     Vérifie la stratégie Keltner Channel.
 

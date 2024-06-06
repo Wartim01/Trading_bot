@@ -1,7 +1,7 @@
 import ta
 import pandas as pd
 
-def check(data):
+def macd_strategy(data):
     if not isinstance(data, pd.DataFrame):
         data = pd.DataFrame([data])
 

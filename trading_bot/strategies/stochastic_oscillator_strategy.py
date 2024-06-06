@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def stochastic_oscillator_check(data, window=14, smooth_window=3, overbought=80, oversold=20):
+def stochastic_oscillator_strategy(data, window=14, smooth_window=3, overbought=80, oversold=20):
     """
     Vérifie la stratégie de l'oscillateur stochastique.
 

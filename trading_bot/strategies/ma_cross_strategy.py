@@ -1,6 +1,6 @@
 import pandas as pd
 
-def ma_cross_check(data, short_window=10, long_window=50):
+def ma_cross_strategy(data, short_window=10, long_window=50):
     """
     Vérifie la stratégie de croisement de moyennes mobiles (MA Cross).
 

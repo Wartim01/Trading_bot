@@ -1,7 +1,7 @@
 import pandas as pd
 import ta
 
-def ichimoku_check(data, conversion_line_period=9, base_line_period=26, leading_span_b_period=52, lagging_span_period=26):
+def ichimoku_strategy(data, conversion_line_period=9, base_line_period=26, leading_span_b_period=52, lagging_span_period=26):
     """
     Vérifie la stratégie Ichimoku Cloud.
 
