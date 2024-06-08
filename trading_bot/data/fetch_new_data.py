@@ -56,7 +56,7 @@ df = pd.DataFrame(new_data)
 
 # Sauvegarde des nouvelles données dans un fichier CSV
 if not df.empty:
-    df.to_csv('data/new_data.csv', index=False)
+    df.to_csv('new_data.csv', index=False)
     logging.info("Data saved to data/new_data.csv")
 else:
     logging.warning("No new data to save.")

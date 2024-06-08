@@ -1,5 +1,6 @@
 import pandas as pd
 import ta
+import talib
 
 def adx_strategy(data, window=14):
     """
@@ -32,5 +33,7 @@ def adx_strategy(data, window=14):
         elif data['di_neg'].iloc[-1] > data['di_pos'].iloc[-1]:
             print(f"ADX Sell signal for {data['symbol'].iloc[-1]}")
             return False # Tendance baissière forte
-
-    return None  # Pas de tendance forte ou direction incertaine
+        
+        except Exception as e:
+        print(f"Erreur lors de l'exécution de la stratégie ADX: {e}")
+        return {}

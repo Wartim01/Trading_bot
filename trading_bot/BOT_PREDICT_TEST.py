@@ -13,6 +13,7 @@ import numpy as np
 import time
 import logging
 import re
+import subprocess
 
 # Importation des stratégies
 from strategies.bollinger_strategy import bollinger_strategy
@@ -77,16 +78,16 @@ def fetch_new_data(symbols):
             new_data.append({
                 'symbol': symbol,
                 'timestamp': pd.to_datetime(kline[0], unit='ms'),
-                'open': float(kline[1]),
-                'high': float(kline[2]),
-                'low': float(kline[3]),
-                'close': float(kline[4]),
-                'volume': float(kline[5]),
-                'close_time': pd.to_datetime(kline[6], unit='ms'),
-                'quote_asset_volume': float(kline[7]),
-                'number_of_trades': int(kline[8]),
-                'taker_buy_base_asset_volume': float(kline[9]),
-                'taker_buy_quote_asset_volume': float(kline[10]),
+                'Open': float(kline[1]),
+                'High': float(kline[2]),
+                'Low': float(kline[3]),
+                'Close': float(kline[4]),
+                'Volume': float(kline[5]),
+                'Close_time': pd.to_datetime(kline[6], unit='ms'),
+                'Quote_asset_volume': float(kline[7]),
+                'Number_of_trades': int(kline[8]),
+                'Taker_buy_base_asset_volume': float(kline[9]),
+                'Taker_buy_quote_asset_volume': float(kline[10]),
                 'ignore': kline[11]
             })
 
@@ -116,7 +117,7 @@ def apply_strategies(data):
 
 def trade_decision(data, capital):
     for index, row in data.iterrows():
-        trade_amount = calculate_trade_amount(capital, row['close'])
+        trade_amount = calculate_trade_amount(capital, row['Close'])
         
         # DataFrame pour les 50 dernières lignes (ou moins)
         row_df = data.iloc[max(0, index-50):index+1]
@@ -129,7 +130,7 @@ def trade_decision(data, capital):
         sell_signals = all_signals.count(False)
 
         if buy_signals >= 3:  
-            logging.info(f"Buy signal for {row['symbol']} at {row['close']}")
+            logging.info(f"Buy signal for {row['symbol']} at {row['Close']}")
             try:
                 order = client.order_market_buy(
                     symbol=row['symbol'],
@@ -140,7 +141,7 @@ def trade_decision(data, capital):
                 logging.error(f"An error occurred while placing buy order: {e}")
                 
         elif sell_signals >= 3:  
-            logging.info(f"Sell signal for {row['symbol']} at {row['close']}")
+            logging.info(f"Sell signal for {row['symbol']} at {row['Close']}")
             try:
                 order = client.order_market_sell(
                     symbol=row['symbol'],
@@ -152,6 +153,13 @@ def trade_decision(data, capital):
 
 
 def run_bot():
+    # Exécution du script pour récupérer de nouvelles données
+    subprocess.run(["python", "data/fetch_new_data.py"])
+
+    # Chargement des nouvelles données
+    data = pd.read_csv('data/new_data.csv')
+    print("Available columns in loaded data:", data.columns)
+
     capital = 20 
     new_data = fetch_new_data(symbols)
     if new_data.empty:
