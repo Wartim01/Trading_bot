@@ -3,12 +3,11 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from config.settings import API_KEY, API_SECRET
 import pandas as pd
 import time
 import logging
-from binance.client import Client
-from binance.exceptions import BinanceAPIException, BinanceRequestException
+import re
+
 
 # Configurez logging pour stocker les messages d'erreur et d'info dans un fichier
 logging.basicConfig(filename='fetch_new_data.log', level=logging.INFO, 

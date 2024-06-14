@@ -1,42 +1,650 @@
-2024-06-08 09:16:53,331:INFO:Fetching klines for symbol: BTCUSDT
-2024-06-08 09:16:54,005:INFO:Fetching klines for symbol: ETHUSDT
-2024-06-08 09:16:54,681:INFO:Fetching klines for symbol: BNBUSDT
-2024-06-08 09:16:54,946:INFO:Fetching klines for symbol: ADAUSDT
-2024-06-08 09:16:55,207:INFO:Fetching klines for symbol: XRPUSDT
-2024-06-08 09:16:55,873:INFO:Fetching klines for symbol: SOLUSDT
-2024-06-08 09:16:56,575:INFO:Fetching klines for symbol: DOGEUSDT
-2024-06-08 09:16:57,241:INFO:Fetching klines for symbol: DOTUSDT
-2024-06-08 09:16:57,907:INFO:Fetching klines for symbol: AVAXUSDT
-2024-06-08 09:16:58,576:INFO:Fetching klines for symbol: SHIBUSDT
-2024-06-08 09:16:59,511:INFO:Calculated trade amount: 5.649690382842795e-06
-2024-06-08 09:20:14,149:INFO:Fetching klines for symbol: BTCUSDT
-2024-06-08 09:20:14,861:INFO:Fetching klines for symbol: ETHUSDT
-2024-06-08 09:20:15,125:INFO:Fetching klines for symbol: BNBUSDT
-2024-06-08 09:20:15,857:INFO:Fetching klines for symbol: ADAUSDT
-2024-06-08 09:20:16,537:INFO:Fetching klines for symbol: XRPUSDT
-2024-06-08 09:20:17,228:INFO:Fetching klines for symbol: SOLUSDT
-2024-06-08 09:20:17,493:INFO:Fetching klines for symbol: DOGEUSDT
-2024-06-08 09:20:18,158:INFO:Fetching klines for symbol: DOTUSDT
-2024-06-08 09:20:18,850:INFO:Fetching klines for symbol: AVAXUSDT
-2024-06-08 09:20:19,088:INFO:Fetching klines for symbol: SHIBUSDT
-2024-06-08 09:45:13,620:INFO:Fetching klines for symbol: BTCUSDT
-2024-06-08 09:45:14,284:INFO:Fetching klines for symbol: ETHUSDT
-2024-06-08 09:45:15,006:INFO:Fetching klines for symbol: BNBUSDT
-2024-06-08 09:45:15,729:INFO:Fetching klines for symbol: ADAUSDT
-2024-06-08 09:45:16,398:INFO:Fetching klines for symbol: XRPUSDT
-2024-06-08 09:45:17,081:INFO:Fetching klines for symbol: SOLUSDT
-2024-06-08 09:45:17,768:INFO:Fetching klines for symbol: DOGEUSDT
-2024-06-08 09:45:18,008:INFO:Fetching klines for symbol: DOTUSDT
-2024-06-08 09:45:18,689:INFO:Fetching klines for symbol: AVAXUSDT
-2024-06-08 09:45:19,356:INFO:Fetching klines for symbol: SHIBUSDT
-2024-06-08 09:46:20,076:INFO:Fetching klines for symbol: BTCUSDT
-2024-06-08 09:46:20,748:INFO:Fetching klines for symbol: ETHUSDT
-2024-06-08 09:46:21,420:INFO:Fetching klines for symbol: BNBUSDT
-2024-06-08 09:46:22,086:INFO:Fetching klines for symbol: ADAUSDT
-2024-06-08 09:46:22,750:INFO:Fetching klines for symbol: XRPUSDT
-2024-06-08 09:46:23,420:INFO:Fetching klines for symbol: SOLUSDT
-2024-06-08 09:46:24,220:INFO:Fetching klines for symbol: DOGEUSDT
-2024-06-08 09:46:24,462:INFO:Fetching klines for symbol: DOTUSDT
-2024-06-08 09:46:25,242:INFO:Fetching klines for symbol: AVAXUSDT
-2024-06-08 09:46:25,913:INFO:Fetching klines for symbol: SHIBUSDT
-2024-06-08 09:46:26,801:INFO:Calculated trade amount: 5.649690382842795e-06
+2024-06-14 10:20:40,474:INFO:Fetching klines for symbol: BTCUSDT
+2024-06-14 10:20:41,224:INFO:Fetching klines for symbol: ETHUSDT
+2024-06-14 10:20:41,998:INFO:Fetching klines for symbol: BNBUSDT
+2024-06-14 10:20:42,789:INFO:Fetching klines for symbol: ADAUSDT
+2024-06-14 10:20:43,082:INFO:Fetching klines for symbol: XRPUSDT
+2024-06-14 10:20:43,363:INFO:Fetching klines for symbol: SOLUSDT
+2024-06-14 10:20:44,399:INFO:Fetching klines for symbol: DOGEUSDT
+2024-06-14 10:20:45,163:INFO:Fetching klines for symbol: DOTUSDT
+2024-06-14 10:20:45,939:INFO:Fetching klines for symbol: AVAXUSDT
+2024-06-14 10:20:46,218:INFO:Fetching klines for symbol: SHIBUSDT
+2024-06-14 10:20:48,732:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:20:50,005:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:20:50,525:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:20:50,803:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:20:50,807:INFO:Buy signal for BTCUSDT at 70741.87 (Buy score: 3.4000000000000004, Sell score: 0)
+2024-06-14 10:20:51,063:ERROR:An error occurred while placing buy order: APIError(code=-1100): Illegal characters found in parameter 'quantity'; legal range is '^([0-9]{1,20})(\.[0-9]{1,20})?$'.
+2024-06-14 10:24:24,815:INFO:Fetching klines for symbol: BTCUSDT
+2024-06-14 10:24:25,579:INFO:Fetching klines for symbol: ETHUSDT
+2024-06-14 10:24:26,359:INFO:Fetching klines for symbol: BNBUSDT
+2024-06-14 10:24:26,653:INFO:Fetching klines for symbol: ADAUSDT
+2024-06-14 10:24:26,947:INFO:Fetching klines for symbol: XRPUSDT
+2024-06-14 10:24:27,726:INFO:Fetching klines for symbol: SOLUSDT
+2024-06-14 10:24:28,009:INFO:Fetching klines for symbol: DOGEUSDT
+2024-06-14 10:24:28,302:INFO:Fetching klines for symbol: DOTUSDT
+2024-06-14 10:24:28,590:INFO:Fetching klines for symbol: AVAXUSDT
+2024-06-14 10:24:29,623:INFO:Fetching klines for symbol: SHIBUSDT
+2024-06-14 10:24:31,481:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:32,025:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:32,322:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:32,620:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:32,623:INFO:Buy signal for BTCUSDT at 70741.87 (Buy score: 3.4000000000000004, Sell score: 0)
+2024-06-14 10:24:32,882:ERROR:An error occurred while placing buy order: APIError(code=-1100): Illegal characters found in parameter 'quantity'; legal range is '^([0-9]{1,20})(\.[0-9]{1,20})?$'.
+2024-06-14 10:24:33,177:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:33,179:INFO:Buy signal for BTCUSDT at 70997.16 (Buy score: 3.4000000000000004, Sell score: 0)
+2024-06-14 10:24:33,440:ERROR:An error occurred while placing buy order: APIError(code=-1100): Illegal characters found in parameter 'quantity'; legal range is '^([0-9]{1,20})(\.[0-9]{1,20})?$'.
+2024-06-14 10:24:33,740:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:34,036:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:34,331:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:34,637:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:34,938:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:35,239:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:35,541:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:35,842:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:24:36,139:INFO:Calculated trade amount for BTCUSDT: 1e-05
+2024-06-14 10:26:53,560:INFO:Fetching klines for symbol: BTCUSDT
+2024-06-14 10:26:54,350:INFO:Fetching klines for symbol: ETHUSDT
+2024-06-14 10:26:55,147:INFO:Fetching klines for symbol: BNBUSDT
+2024-06-14 10:26:55,437:INFO:Fetching klines for symbol: ADAUSDT
+2024-06-14 10:26:55,728:INFO:Fetching klines for symbol: XRPUSDT
+2024-06-14 10:26:56,540:INFO:Fetching klines for symbol: SOLUSDT
+2024-06-14 10:26:57,329:INFO:Fetching klines for symbol: DOGEUSDT
+2024-06-14 10:26:57,620:INFO:Fetching klines for symbol: DOTUSDT
+2024-06-14 10:26:57,905:INFO:Fetching klines for symbol: AVAXUSDT
+2024-06-14 10:26:58,665:INFO:Fetching klines for symbol: SHIBUSDT
+2024-06-14 10:28:18,772:INFO:Fetching klines for symbol: BTCUSDT
+2024-06-14 10:28:19,533:INFO:Fetching klines for symbol: ETHUSDT
+2024-06-14 10:28:19,820:INFO:Fetching klines for symbol: BNBUSDT
+2024-06-14 10:28:20,102:INFO:Fetching klines for symbol: ADAUSDT
+2024-06-14 10:28:20,384:INFO:Fetching klines for symbol: XRPUSDT
+2024-06-14 10:28:21,169:INFO:Fetching klines for symbol: SOLUSDT
+2024-06-14 10:28:21,949:INFO:Fetching klines for symbol: DOGEUSDT
+2024-06-14 10:28:22,225:INFO:Fetching klines for symbol: DOTUSDT
+2024-06-14 10:28:23,017:INFO:Fetching klines for symbol: AVAXUSDT
+2024-06-14 10:28:24,051:INFO:Fetching klines for symbol: SHIBUSDT
+2024-06-14 10:28:25,412:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:29:07,194:INFO:Fetching klines for symbol: BTCUSDT
+2024-06-14 10:29:07,953:INFO:Fetching klines for symbol: ETHUSDT
+2024-06-14 10:29:08,743:INFO:Fetching klines for symbol: BNBUSDT
+2024-06-14 10:29:09,042:INFO:Fetching klines for symbol: ADAUSDT
+2024-06-14 10:29:09,796:INFO:Fetching klines for symbol: XRPUSDT
+2024-06-14 10:29:10,079:INFO:Fetching klines for symbol: SOLUSDT
+2024-06-14 10:29:10,845:INFO:Fetching klines for symbol: DOGEUSDT
+2024-06-14 10:29:11,125:INFO:Fetching klines for symbol: DOTUSDT
+2024-06-14 10:29:11,419:INFO:Fetching klines for symbol: AVAXUSDT
+2024-06-14 10:29:12,211:INFO:Fetching klines for symbol: SHIBUSDT
+2024-06-14 10:29:13,804:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:14,685:INFO:Fetching klines for symbol: BTCUSDT
+2024-06-14 10:30:15,475:INFO:Fetching klines for symbol: ETHUSDT
+2024-06-14 10:30:16,256:INFO:Fetching klines for symbol: BNBUSDT
+2024-06-14 10:30:17,036:INFO:Fetching klines for symbol: ADAUSDT
+2024-06-14 10:30:17,332:INFO:Fetching klines for symbol: XRPUSDT
+2024-06-14 10:30:18,092:INFO:Fetching klines for symbol: SOLUSDT
+2024-06-14 10:30:18,880:INFO:Fetching klines for symbol: DOGEUSDT
+2024-06-14 10:30:19,169:INFO:Fetching klines for symbol: DOTUSDT
+2024-06-14 10:30:19,917:INFO:Fetching klines for symbol: AVAXUSDT
+2024-06-14 10:30:20,718:INFO:Fetching klines for symbol: SHIBUSDT
+2024-06-14 10:30:21,600:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:21,602:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:21,602:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:21,907:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:21,907:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:21,907:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:22,209:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:22,209:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:22,209:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:22,506:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:22,507:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:22,507:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:22,808:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:22,808:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:22,808:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:23,106:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:23,106:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:23,106:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:23,401:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:23,402:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:23,402:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:23,912:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:23,912:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:23,912:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:24,197:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:24,197:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:24,197:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:24,476:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:24,476:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:24,476:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:24,761:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:24,762:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:24,762:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:25,046:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:25,046:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:25,046:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:25,346:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:25,347:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:25,347:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:25,642:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:25,643:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:25,643:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:25,936:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:25,936:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:25,936:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:26,230:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:26,231:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:26,231:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:26,535:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:26,535:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:26,535:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:26,828:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:26,828:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:26,828:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:27,114:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:27,114:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:27,114:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:27,395:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:27,395:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:27,395:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:27,690:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:27,690:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:27,690:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:27,980:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:27,980:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:27,980:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:28,262:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:28,263:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:28,263:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:28,562:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:28,563:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:28,563:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:28,841:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:28,842:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:28,842:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:29,135:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:29,135:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:29,135:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:29,421:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:29,422:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:29,422:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:29,702:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:29,702:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:29,702:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:29,991:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:29,991:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:29,991:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:30,270:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:30,270:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:30,270:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:30,563:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:30,563:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:30,564:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:30,844:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:30,844:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:30,844:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:31,143:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:31,143:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:31,143:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:31,437:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:31,438:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:31,438:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:31,720:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:31,720:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:31,720:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:32,010:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:32,010:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:32,010:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:32,304:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:32,304:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:32,304:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:32,586:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:32,586:WARNING:Trade amount for BTCUSDT is below minNotional: 1.882e-05. Skipping trade.
+2024-06-14 10:30:32,586:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:32,880:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:32,880:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:32,880:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:33,162:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:33,162:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:33,162:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:33,458:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:33,458:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:33,458:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:33,739:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:33,739:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:33,739:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:34,055:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:34,055:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:34,055:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:34,336:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:34,336:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:34,337:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:34,666:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:34,667:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:34,667:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:34,945:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:34,946:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:34,946:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:35,228:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:35,228:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:35,228:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:35,516:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:35,516:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:35,516:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:35,799:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:35,799:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:35,799:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:36,115:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:36,116:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:36,116:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:36,396:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:36,396:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:36,396:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:36,679:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:36,679:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:36,679:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:36,960:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:36,960:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:36,960:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:37,251:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:37,251:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:37,251:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:37,529:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:37,529:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:37,529:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:37,826:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:37,827:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:37,827:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:38,123:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:38,123:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:38,123:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:38,415:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:38,415:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:38,416:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:38,699:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:38,699:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:38,700:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:38,983:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:38,983:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:38,983:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:39,278:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:39,278:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:39,278:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:39,570:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:39,571:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:39,571:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:39,867:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:39,867:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:39,867:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:40,161:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:40,161:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:40,161:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:40,447:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:40,447:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:40,447:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:40,723:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:40,723:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:40,723:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:41,021:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:41,021:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:41,021:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:41,310:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:41,311:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:41,311:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:41,604:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:41,605:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:41,605:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:41,881:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:41,881:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:41,881:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:42,183:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:42,183:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:42,183:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:42,476:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:42,477:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:42,477:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:42,770:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:42,771:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:42,771:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:43,053:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:43,054:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:43,054:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:43,350:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:43,350:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:43,350:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:43,652:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:43,652:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:43,652:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:43,934:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:43,934:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:43,934:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:44,213:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:44,214:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:44,214:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:44,496:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:44,496:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:44,496:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:44,791:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:44,791:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:44,791:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:45,076:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:45,076:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:45,076:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:45,370:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:45,370:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:45,370:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:45,663:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:45,664:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:45,664:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:45,960:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:45,960:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:45,960:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:46,257:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:46,257:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:46,257:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:46,555:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:46,555:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:46,555:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:46,834:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:46,834:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:46,834:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:47,118:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:47,118:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:47,118:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:47,415:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:47,415:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:47,415:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:47,696:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:47,696:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:47,696:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:47,979:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:47,979:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:47,979:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:48,264:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:48,264:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:48,264:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:48,544:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:48,544:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:48,544:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:48,825:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:48,825:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:48,825:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:49,108:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:49,108:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:49,108:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:49,405:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:49,405:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:49,405:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:49,685:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:49,685:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:49,685:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:49,979:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:49,979:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:49,979:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:50,264:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:50,264:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:50,264:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:50,559:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:50,559:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:50,559:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:50,852:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:50,852:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:50,852:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:51,147:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:51,147:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:51,147:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:51,431:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:51,431:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:51,431:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:51,753:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:51,753:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:51,753:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:52,038:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:52,038:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:52,038:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:52,316:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:52,316:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:52,316:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:52,595:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:52,595:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:52,595:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:52,873:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:52,873:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:52,873:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:53,165:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:53,166:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:53,166:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:53,445:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:53,445:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:53,445:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:53,729:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:53,730:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:53,730:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:54,011:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:54,011:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:54,011:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:54,305:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:54,305:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:54,305:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:54,586:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:54,586:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:54,586:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:54,870:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:54,870:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:54,870:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:55,169:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:55,169:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:55,169:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:55,465:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:55,465:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:55,465:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:55,757:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:55,757:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:55,758:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:56,060:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:56,060:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:56,060:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:56,357:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:56,357:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:56,357:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:56,657:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:56,657:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:56,657:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:56,935:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:56,935:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:56,935:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:57,230:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:57,231:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:57,231:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:57,511:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:57,511:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:57,511:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:57,807:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:57,807:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:57,807:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:58,102:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:58,102:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:58,102:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:58,397:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:58,397:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:58,397:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:58,691:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:58,691:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:58,691:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:58,971:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:58,971:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:58,971:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:59,254:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:59,254:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:59,254:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:59,538:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:59,538:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:59,538:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:30:59,831:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:30:59,831:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:30:59,831:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:00,115:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:00,115:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:00,115:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:00,421:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:00,422:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:00,422:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:00,714:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:00,714:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:00,714:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:00,993:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:00,993:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:00,993:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:01,287:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:01,287:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:01,287:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:01,581:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:01,581:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:01,581:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:01,882:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:01,882:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:01,882:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:02,160:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:02,160:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:02,160:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:02,442:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:02,443:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:02,443:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:02,727:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:02,727:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:02,728:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:03,010:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:03,010:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:03,010:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:03,306:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:03,306:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:03,306:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:03,601:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:03,601:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:03,601:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:03,882:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:03,883:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:03,883:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:04,163:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:04,163:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:04,163:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:04,442:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:04,442:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:04,442:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:04,749:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:04,749:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:04,749:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:05,054:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:05,055:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:05,055:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:05,339:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:05,339:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:05,339:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:05,623:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:05,623:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:05,623:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:05,921:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:05,921:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:05,921:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:06,205:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:06,205:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:06,205:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:06,511:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:06,511:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:06,511:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:06,810:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:06,810:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:06,810:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:07,117:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:07,117:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:07,117:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:07,401:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:07,401:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:07,401:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:07,687:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:07,687:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:07,687:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:07,990:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:07,990:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:07,990:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:08,275:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:08,275:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:08,275:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:08,566:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:08,566:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:08,566:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:08,865:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:08,865:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:08,865:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:09,172:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:09,172:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:09,172:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:09,465:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:09,466:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:09,466:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:09,758:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:09,758:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:09,758:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:10,040:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:10,040:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:10,040:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:10,321:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:10,321:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:10,321:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:10,605:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:10,605:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:10,605:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:10,900:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:10,900:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:10,900:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:11,195:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:11,195:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:11,195:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:11,502:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:11,502:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:11,502:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:11,795:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:11,795:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:11,796:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:12,100:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:12,100:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:12,100:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:12,385:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:12,385:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:12,385:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:12,679:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:12,679:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:12,679:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:12,973:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:12,973:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:12,973:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:13,292:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:13,292:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:13,292:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:13,588:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:13,588:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:13,588:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:13,881:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:13,881:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:13,881:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:14,160:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:14,160:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:14,160:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:14,455:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:14,455:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:14,455:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:14,741:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:14,741:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:14,741:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:15,036:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:15,036:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:15,036:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:15,318:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:15,319:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:15,319:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:15,632:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:15,632:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:15,632:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:15,926:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:15,926:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:15,927:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
+2024-06-14 10:31:16,218:WARNING:MIN_NOTIONAL filter not found for symbol BTCUSDT, using default min_notional of 10
+2024-06-14 10:31:16,218:WARNING:Trade amount for BTCUSDT is below minNotional: 1e-05. Skipping trade.
+2024-06-14 10:31:16,218:WARNING:Trade amount for BTCUSDT is too small: 0. Skipping trade.
